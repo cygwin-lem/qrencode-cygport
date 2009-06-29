@@ -1,5 +1,5 @@
 category: Graphics
-requires: cygwin libqrencode3 libpng12
+requires: libqrencode3 libpng12
 sdesc: "QR Code symbol library (utility)"
 ldesc: "Libqrencode is a C library for encoding data in a QR Code 
 symbol, a kind of 2D symbology that can be scanned by handy terminals 
