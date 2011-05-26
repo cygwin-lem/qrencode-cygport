@@ -1,0 +1,11 @@
+--- origsrc/qrencode-3.1.1/Makefile.am
++++ src/qrencode-3.1.1/Makefile.am
+@@ -16,7 +16,7 @@
+ 						 split.c split.h \
+ 						 mask.c mask.h
+ 
+-libqrencode_la_LDFLAGS = -version-number $(MAJOR_VERSION):$(MINOR_VERSION):$(MICRO_VERSION)
++libqrencode_la_LDFLAGS = -version-number $(MAJOR_VERSION):$(MINOR_VERSION):$(MICRO_VERSION) -no-undefined
+ 
+ include_HEADERS = qrencode.h
+ 

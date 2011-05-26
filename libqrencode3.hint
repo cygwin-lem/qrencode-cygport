@@ -1,5 +1,5 @@
 category: Graphics
-requires: cygwin
+requires:
 external-source: qrencode
 sdesc: "QR Code symbol library (runtime)"
 ldesc: "Libqrencode is a C library for encoding data in a QR Code 
