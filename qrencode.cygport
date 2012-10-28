@@ -1,6 +1,6 @@
 NAME="qrencode"
 VERSION=3.4.1
-RELEASE=1
+RELEASE=2
 CATEGORY="Graphics"
 SUMMARY="QR Code symbol library"
 DESCRIPTION="Libqrencode is a C library for encoding data in a QR Code
