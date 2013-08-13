@@ -1,19 +1,20 @@
 NAME="qrencode"
-VERSION=3.4.1
-RELEASE=2
-CATEGORY="Graphics"
+VERSION=3.4.3
+RELEASE=1
+CATEGORY="Libs"
 SUMMARY="QR Code symbol library"
 DESCRIPTION="Libqrencode is a C library for encoding data in a QR Code
 symbol, a kind of 2D symbology that can be scanned by handy terminals
 such as a mobile phone with CCD. The capacity of QR Code is up to 7000
 digits or 4000 characters, and is highly robust."
 HOMEPAGE="http://megaui.net/fukuchi/works/qrencode/index.en.html"
-SRC_URI="http://megaui.net/fukuchi/works/qrencode/${P}.tar.bz2"
+SRC_URI="http://megaui.net/fukuchi/works/qrencode/${NAME}-${VERSION}.tar.bz2"
 PATCH_URI="3.1.1-no-undefined.patch"
 
 DEPEND="pkgconfig(libpng)"
 
 PKG_NAMES="${PN} lib${PN}3 lib${PN}-devel"
+qrencode_CATEGORY="Graphics"
 qrencode_SUMMARY="QR Code command-line generator"
 qrencode_CONTENTS="usr/bin/*.exe usr/share/"
 libqrencode3_SUMMARY="${SUMMARY} (runtime)"
