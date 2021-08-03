@@ -1,0 +1,35 @@
+From ec7f4af217105a835a363ac52f3fa358cbd35a34 Mon Sep 17 00:00:00 2001
+From: Lemures Lemniscati <lemures.lemniscati@gmail.com>
+Date: Tue, 3 Aug 2021 07:42:28 +0900
+Subject: [PATCH] Fix MAX_DATA_SIZE, in case 16 symbols are needed by
+ structured appending
+
+Fix a bug introduced in the commit 3e629c7
+---
+ qrenc.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/qrenc.c b/qrenc.c
+index c09c4ab..6e589e8 100644
+--- a/qrenc.c
++++ b/qrenc.c
+@@ -32,6 +32,7 @@
+ #endif
+ 
+ #include "qrencode.h"
++#include "qrinput.h"
+ 
+ #define INCHES_PER_METER (100.0/2.54)
+ 
+@@ -237,7 +238,7 @@ static int color_set(unsigned char color[4], const char *value)
+ 	return 0;
+ }
+ 
+-#define MAX_DATA_SIZE (7090 * 2) /* timed by the safty factor 2 */
++#define MAX_DATA_SIZE (7089 * MAX_STRUCTURED_SYMBOLS + 1) /* an upper bound (cf. the specification) */
+ static unsigned char data_buffer[MAX_DATA_SIZE];
+ static unsigned char *readFile(FILE *fp, int *length)
+ {
+-- 
+2.32.0
+

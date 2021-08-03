@@ -1,15 +1,18 @@
 NAME="qrencode"
 VERSION=4.1.1
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="QR Code symbol library"
 DESCRIPTION="Libqrencode is a C library for encoding data in a QR Code
 symbol, a kind of 2D symbology that can be scanned by handy terminals
 such as a mobile phone with CCD. The capacity of QR Code is up to 7000
 digits or 4000 characters, and is highly robust."
-HOMEPAGE="https://fukuchi.org/works/qrencode/index.en.html"
+HOMEPAGE="https://fukuchi.org/works/qrencode/index.html.en"
 SRC_URI="https://fukuchi.org/works/qrencode/${NAME}-${VERSION}.tar.bz2"
-PATCH_URI="3.1.1-no-undefined.patch"
+PATCH_URI="
+  3.1.1-no-undefined.patch
+  4.1.1-fix-max_data_size.patch
+"
 
 DEPEND="pkgconfig(libpng)"
 
@@ -24,7 +27,7 @@ BUILD_REQUIRES="\
 "
 
 ################################
-## ABI for inkscape
+## ABI
 ABI=4
 
 ################################
@@ -41,8 +44,6 @@ printf -v "${THIS_VN}_CONTENTS" "%s" "\
   usr/bin/*.exe \
   usr/share/ \
 "
-printf -v "${THIS_VN}_REQUIRES" "%s" "\
-"
 
 ################################
 # Runtime
@@ -53,8 +54,6 @@ PKG_NAMES+=" ${THIS_PN}"
 printf -v "${THIS_VN}_SUMMARY"  "%s" "${SUMMARY% *} (runtime)"
 printf -v "${THIS_VN}_CONTENTS" "%s" "\
   usr/bin/*.dll \
-"
-printf -v "${THIS_VN}_REQUIRES" "%s" "\
 "
 
 ###############################
@@ -67,8 +66,6 @@ printf -v "${THIS_VN}_SUMMARY"  "%s" "${SUMMARY% *} (development)"
 printf -v "${THIS_VN}_CONTENTS" "%s" "\
   usr/include/ \
   usr/lib/ \
-"
-printf -v "${THIS_VN}_REQUIRES" "%s" "\
 "
 
 ###############################
