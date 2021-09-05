@@ -1,6 +1,6 @@
 NAME="qrencode"
 VERSION=4.1.1
-RELEASE=2
+RELEASE=3
 CATEGORY="Libs"
 SUMMARY="QR Code symbol library"
 DESCRIPTION="Libqrencode is a C library for encoding data in a QR Code
@@ -12,6 +12,7 @@ SRC_URI="https://fukuchi.org/works/qrencode/${NAME}-${VERSION}.tar.bz2"
 PATCH_URI="
   3.1.1-no-undefined.patch
   4.1.1-fix-max_data_size.patch
+  https://github.com/fukuchi/libqrencode/files/7108505/qrencode-xpm-line-end.txt
 "
 
 DEPEND="pkgconfig(libpng)"
